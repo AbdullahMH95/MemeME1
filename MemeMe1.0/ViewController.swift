@@ -47,8 +47,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,
     }
     
     @objc func keyboardWillShow(_ notification:Notification) {
-        
+        if bottomText.isEditing {
         view.frame.origin.y -= getKeyboardHeight(notification)
+        }
     }
     
     func getKeyboardHeight(_ notification:Notification) -> CGFloat {
@@ -65,29 +66,25 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
-        
-        let memeTextAttributes : [NSAttributedString.Key : Any] = [
-            NSAttributedString.Key(rawValue: NSAttributedString.Key.strokeColor.rawValue): UIColor.black,
-            NSAttributedString.Key(rawValue: NSAttributedString.Key.foregroundColor.rawValue): UIColor.white,
-            NSAttributedString.Key(rawValue: NSAttributedString.Key.font.rawValue): UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
-            NSAttributedString.Key(rawValue: NSAttributedString.Key.strokeWidth.rawValue): -2.0
-        ]
-        
-        topText.defaultTextAttributes = memeTextAttributes
-        bottomText.defaultTextAttributes = memeTextAttributes
-        topText.textAlignment = .center
-        bottomText.textAlignment = .center
-        topText.delegate = self
-        bottomText.delegate = self
+        setTest(textField: topText, text: "TOP")
+        setTest(textField: bottomText, text: "BOTTOM")
     }
     
     
     @IBAction func pickAnImage(_ sender: Any) {
-        let imagePicker = UIImagePickerController()
-        imagePicker.delegate = self
-        imagePicker.sourceType = .photoLibrary
-        imagePicker.allowsEditing = false
-        present(imagePicker, animated: true, completion: nil)
+        if (sender as! UIBarButtonItem).tag == 0 { // Start Camera
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.sourceType = .camera;
+            present(imagePicker, animated: true, completion: nil)
+        }
+        else { // Open Photo library
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.sourceType = .photoLibrary
+            imagePicker.allowsEditing = false
+            present(imagePicker, animated: true, completion: nil)
+        }
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
@@ -100,15 +97,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,
             picker.dismiss(animated: true, completion: nil)
         }
     }
-    
-    @IBAction func pickAnImageFromCamera(_ sender: Any) {
-        let imagePicker = UIImagePickerController()
-        imagePicker.delegate = self
-        imagePicker.sourceType = .camera;
-        cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
-        present(imagePicker, animated: true, completion: nil)
-    }
-    
     
     
     func save() {
@@ -176,13 +164,27 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,
         bottomText.text = "BOTTOM"
     }
     
+    func setTest(textField: UITextField, text: String) {
+        let memeTextAttributes : [NSAttributedString.Key : Any] = [
+            NSAttributedString.Key(rawValue: NSAttributedString.Key.strokeColor.rawValue): UIColor.black,
+            NSAttributedString.Key(rawValue: NSAttributedString.Key.foregroundColor.rawValue): UIColor.white,
+            NSAttributedString.Key(rawValue: NSAttributedString.Key.font.rawValue): UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
+            NSAttributedString.Key(rawValue: NSAttributedString.Key.strokeWidth.rawValue): -2.0
+        ]
+        textField.textAlignment = .center
+        textField.delegate = self
+        textField.defaultTextAttributes = memeTextAttributes
+        textField.text = text
+    }
+    
     
 }
 
+// MEME STRUCT
 struct Meme {
     var topText: String!
     var bottomText: String!
     var originalImage: UIImage!
     var memedImage: UIImage!
+    
 }
-
