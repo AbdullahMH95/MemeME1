@@ -18,6 +18,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,
     @IBOutlet weak var bottomText: UITextField!
     @IBOutlet weak var bottomToolbar: UIToolbar!
     @IBOutlet weak var topToolbar: UIToolbar!
+    @IBOutlet weak var shareButton: UIBarButtonItem!
     
     override func viewWillAppear(_ animated: Bool) {
         
@@ -66,6 +67,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,
         cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
         setTest(textField: topText, text: "TOP")
         setTest(textField: bottomText, text: "BOTTOM")
+        shareButton.isEnabled = false
     }
     
     
