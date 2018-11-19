@@ -90,6 +90,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,
         if let image = info[.originalImage] as? UIImage {
             imageView.image = image
             imageView.contentMode = .scaleAspectFit
+            shareButton.isEnabled = true
             picker.dismiss(animated: true, completion: nil)
         }
         else {
