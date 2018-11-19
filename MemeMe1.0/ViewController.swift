@@ -89,7 +89,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let image = info[.originalImage] as? UIImage {
             imageView.image = image
+            
+            // *From rubric* The chosen image from the camera or the photo album is displayed and scaled properly with AspectFit to fit the device screen.
             imageView.contentMode = .scaleAspectFit
+            
             shareButton.isEnabled = true
             picker.dismiss(animated: true, completion: nil)
         }
@@ -123,7 +126,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,
         
         return memedImage
     }
-    
+    // Leeson 4: 9- Textfield Specifications
+    // 4. When a user taps inside a textfield, the default text should clear. This can be accomplished in textFieldDidBeginEditing method. Be sure to remove default text only, not user entered text.
+    // Me: I prefer to be place holder but to get fimlier with delgate (as Udacity said) I most implement UITextFieldDelegate delgate.
     func textFieldDidBeginEditing(_ textField: UITextField) {
         if textField.text == "TOP" || textField.text == "BOTTOM" {
             textField.text = ""
@@ -140,8 +145,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,
     }
     
     // Share Meme and check if can be share or not?
+    // now share button is disabled in ViewDidLoad
     @IBAction func shareMeme(_ sender: Any) {
-        if imageView.image == UIImage(named: "LaunchImage") || bottomText.text == "BOTTOM" || topText.text == "TOP" {
+        if imageView.image == nil || bottomText.text == "BOTTOM" || topText.text == "TOP" {
             print("can't be shared")
             return
         }
@@ -159,7 +165,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,
     }
     
     @IBAction func reset(_ sender: Any) {
-        imageView.image = UIImage(named: "LaunchImage")
+        imageView.image = nil
         topText.text = "TOP"
         bottomText.text = "BOTTOM"
     }
@@ -169,12 +175,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,
             NSAttributedString.Key(rawValue: NSAttributedString.Key.strokeColor.rawValue): UIColor.black,
             NSAttributedString.Key(rawValue: NSAttributedString.Key.foregroundColor.rawValue): UIColor.white,
             NSAttributedString.Key(rawValue: NSAttributedString.Key.font.rawValue): UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
-            NSAttributedString.Key(rawValue: NSAttributedString.Key.strokeWidth.rawValue): -2.0
+            NSAttributedString.Key(rawValue: NSAttributedString.Key.strokeWidth.rawValue): -3.0
         ]
-        textField.textAlignment = .center
         textField.delegate = self
         textField.defaultTextAttributes = memeTextAttributes
         textField.text = text
+        textField.textAlignment = .center
+
     }
     
 }

@@ -18,15 +18,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="gJN-ic-wWs">
-                                <rect key="frame" x="32" y="132" width="311" height="558"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchImage" translatesAutoresizingMaskIntoConstraints="NO" id="gVR-eO-tK2">
-                                        <rect key="frame" x="0.0" y="0.0" width="311" height="558"/>
-                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                    </imageView>
-                                </subviews>
-                            </stackView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gVR-eO-tK2">
+                                <rect key="frame" x="0.0" y="88" width="375" height="641"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </imageView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9kR-0c-6QH" userLabel="BottomToolbar">
                                 <rect key="frame" x="0.0" y="729" width="375" height="49"/>
                                 <items>
@@ -43,15 +38,15 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TOP" textAlignment="center" minimumFontSize="35" translatesAutoresizingMaskIntoConstraints="NO" id="QdA-tq-Ewj" userLabel="TopText">
-                                <rect key="frame" x="152.66666666666666" y="140" width="70" height="42"/>
-                                <nil key="textColor"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TOP" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="35" translatesAutoresizingMaskIntoConstraints="NO" id="QdA-tq-Ewj" userLabel="TopText">
+                                <rect key="frame" x="16" y="140" width="343" height="42"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="BOTTOM" textAlignment="center" minimumFontSize="35" translatesAutoresizingMaskIntoConstraints="NO" id="CzP-IW-9gJ" userLabel="BottomText">
-                                <rect key="frame" x="114.66666666666669" y="632" width="146" height="42"/>
-                                <nil key="textColor"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="BOTTOM" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="35" translatesAutoresizingMaskIntoConstraints="NO" id="CzP-IW-9gJ" userLabel="BottomText">
+                                <rect key="frame" x="16" y="632" width="343" height="42"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
@@ -74,19 +69,21 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="gJN-ic-wWs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="6bi-7l-RPf"/>
-                            <constraint firstItem="QdA-tq-Ewj" firstAttribute="top" secondItem="gJN-ic-wWs" secondAttribute="top" constant="8" id="76M-mL-rRZ"/>
-                            <constraint firstItem="gJN-ic-wWs" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="88" id="H6d-Bz-Hdb"/>
-                            <constraint firstItem="9kR-0c-6QH" firstAttribute="top" secondItem="gJN-ic-wWs" secondAttribute="bottom" constant="39" id="JcV-k6-nZw"/>
+                            <constraint firstItem="QdA-tq-Ewj" firstAttribute="top" secondItem="4DL-yd-reA" secondAttribute="bottom" constant="52" id="5ea-kF-MqJ"/>
+                            <constraint firstItem="gVR-eO-tK2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9mG-Td-IG4"/>
+                            <constraint firstItem="QdA-tq-Ewj" firstAttribute="centerX" secondItem="4DL-yd-reA" secondAttribute="centerX" id="CCo-zE-n7V"/>
+                            <constraint firstItem="gVR-eO-tK2" firstAttribute="top" secondItem="4DL-yd-reA" secondAttribute="bottom" id="FK6-I8-i7n"/>
+                            <constraint firstItem="QdA-tq-Ewj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Gra-LV-51m"/>
                             <constraint firstItem="9kR-0c-6QH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="T4S-Jd-BUN"/>
-                            <constraint firstItem="gJN-ic-wWs" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="TLo-xn-C3y"/>
                             <constraint firstItem="4DL-yd-reA" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="U1B-Ah-0WE"/>
-                            <constraint firstItem="QdA-tq-Ewj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="VAW-5C-ZQr"/>
+                            <constraint firstItem="CzP-IW-9gJ" firstAttribute="trailing" secondItem="QdA-tq-Ewj" secondAttribute="trailing" id="WQA-nV-gVd"/>
                             <constraint firstItem="4DL-yd-reA" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Wad-ok-tZb"/>
+                            <constraint firstItem="CzP-IW-9gJ" firstAttribute="leading" secondItem="QdA-tq-Ewj" secondAttribute="leading" id="ZKj-I6-T06"/>
+                            <constraint firstItem="9kR-0c-6QH" firstAttribute="top" secondItem="gVR-eO-tK2" secondAttribute="bottom" id="eZS-4H-To9"/>
                             <constraint firstItem="9kR-0c-6QH" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="fpd-Kp-VtG"/>
                             <constraint firstItem="4DL-yd-reA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="lMg-5s-CED"/>
-                            <constraint firstItem="CzP-IW-9gJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="qDV-Zd-yuz"/>
-                            <constraint firstItem="gJN-ic-wWs" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="tl3-wn-haQ"/>
+                            <constraint firstItem="gVR-eO-tK2" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="n3P-sE-wg7"/>
+                            <constraint firstItem="gVR-eO-tK2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="o1R-UO-ThD"/>
                             <constraint firstItem="9kR-0c-6QH" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="uOE-fJ-fom"/>
                             <constraint firstItem="9kR-0c-6QH" firstAttribute="top" secondItem="CzP-IW-9gJ" secondAttribute="bottom" constant="55" id="yyO-56-GjE"/>
                         </constraints>
@@ -107,7 +104,4 @@
             <point key="canvasLocation" x="61.600000000000001" y="37.684729064039409"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="LaunchImage" width="1536" height="2048"/>
-    </resources>
 </document>
