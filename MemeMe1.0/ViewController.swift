@@ -12,14 +12,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,
     UINavigationControllerDelegate, UITextFieldDelegate
  {
 
-    
     @IBOutlet weak var cameraButton: UIBarButtonItem!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var topText: UITextField!
     @IBOutlet weak var bottomText: UITextField!
     @IBOutlet weak var bottomToolbar: UIToolbar!
     @IBOutlet weak var topToolbar: UIToolbar!
-    
     
     override func viewWillAppear(_ animated: Bool) {
         
@@ -72,25 +70,24 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,
     
     
     @IBAction func pickAnImage(_ sender: Any) {
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+        
         if (sender as! UIBarButtonItem).tag == 0 { // Start Camera
-            let imagePicker = UIImagePickerController()
-            imagePicker.delegate = self
-            imagePicker.sourceType = .camera;
-            present(imagePicker, animated: true, completion: nil)
-        }
-        else { // Open Photo library
-            let imagePicker = UIImagePickerController()
-            imagePicker.delegate = self
+            imagePicker.sourceType = .camera
+            imagePicker.allowsEditing = true
+        } else { // Open Photo library
             imagePicker.sourceType = .photoLibrary
             imagePicker.allowsEditing = false
-            present(imagePicker, animated: true, completion: nil)
         }
+        
+        present(imagePicker, animated: true, completion: nil)
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let image = info[.originalImage] as? UIImage {
             imageView.image = image
-            imageView.contentMode = .scaleAspectFill
+            imageView.contentMode = .scaleAspectFit
             picker.dismiss(animated: true, completion: nil)
         }
         else {
@@ -176,7 +173,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,
         textField.defaultTextAttributes = memeTextAttributes
         textField.text = text
     }
-    
     
 }
 
