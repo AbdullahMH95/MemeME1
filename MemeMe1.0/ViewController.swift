@@ -106,6 +106,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,
         // Create the meme
         let memedImage = generateMemedImage()
         let meme = Meme(topText: topText.text!, bottomText: bottomText.text!, originalImage: imageView.image!, memedImage: memedImage)
+        let object = UIApplication.shared.delegate
+        let appDelegate = object as! AppDelegate
+        appDelegate.memes.append(meme)
+        print("Meme Saved!")
+        dismiss(animated: true, completion: nil)
     }
     
     func generateMemedImage() -> UIImage {
@@ -165,6 +170,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,
     }
     
     @IBAction func reset(_ sender: Any) {
+        if (imageView.image == nil) {
+            dismiss(animated: true, completion: nil)
+        }
+        
         imageView.image = nil
         topText.text = "TOP"
         bottomText.text = "BOTTOM"
@@ -183,14 +192,4 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,
         textField.textAlignment = .center
 
     }
-    
-}
-
-// MEME STRUCT
-struct Meme {
-    var topText: String!
-    var bottomText: String!
-    var originalImage: UIImage!
-    var memedImage: UIImage!
-    
 }
