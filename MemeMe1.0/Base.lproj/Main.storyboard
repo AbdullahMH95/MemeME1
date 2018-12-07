@@ -56,14 +56,14 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TOP" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="35" translatesAutoresizingMaskIntoConstraints="NO" id="QdA-tq-Ewj" userLabel="TopText">
-                                <rect key="frame" x="16" y="140" width="343" height="42"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TOP" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QdA-tq-Ewj" userLabel="TopText">
+                                <rect key="frame" x="16" y="123" width="343" height="42"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="BOTTOM" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="35" translatesAutoresizingMaskIntoConstraints="NO" id="CzP-IW-9gJ" userLabel="BottomText">
-                                <rect key="frame" x="16" y="632" width="343" height="42"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="BOTTOM" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CzP-IW-9gJ" userLabel="BottomText">
+                                <rect key="frame" x="16" y="652" width="343" height="42"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
@@ -87,7 +87,7 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="QdA-tq-Ewj" firstAttribute="top" secondItem="4DL-yd-reA" secondAttribute="bottom" constant="52" id="5ea-kF-MqJ"/>
+                            <constraint firstItem="QdA-tq-Ewj" firstAttribute="top" secondItem="4DL-yd-reA" secondAttribute="bottom" constant="35" id="5ea-kF-MqJ"/>
                             <constraint firstItem="gVR-eO-tK2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9mG-Td-IG4"/>
                             <constraint firstItem="QdA-tq-Ewj" firstAttribute="centerX" secondItem="4DL-yd-reA" secondAttribute="centerX" id="CCo-zE-n7V"/>
                             <constraint firstItem="gVR-eO-tK2" firstAttribute="top" secondItem="4DL-yd-reA" secondAttribute="bottom" id="FK6-I8-i7n"/>
@@ -103,7 +103,7 @@
                             <constraint firstItem="gVR-eO-tK2" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="n3P-sE-wg7"/>
                             <constraint firstItem="gVR-eO-tK2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="o1R-UO-ThD"/>
                             <constraint firstItem="9kR-0c-6QH" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="uOE-fJ-fom"/>
-                            <constraint firstItem="9kR-0c-6QH" firstAttribute="top" secondItem="CzP-IW-9gJ" secondAttribute="bottom" constant="55" id="yyO-56-GjE"/>
+                            <constraint firstItem="9kR-0c-6QH" firstAttribute="top" secondItem="CzP-IW-9gJ" secondAttribute="bottom" constant="35" id="yyO-56-GjE"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -257,15 +257,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="61x-Ki-cZ7">
-                                <rect key="frame" x="0.0" y="150" width="375" height="512"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="61x-Ki-cZ7">
+                                <rect key="frame" x="0.0" y="44" width="375" height="734"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.35704177459999997" green="0.58639733540000005" blue="0.78048089379999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="yy3-Rw-xtP" firstAttribute="trailing" secondItem="61x-Ki-cZ7" secondAttribute="trailing" id="5lR-bd-DaG"/>
-                            <constraint firstItem="yy3-Rw-xtP" firstAttribute="bottom" secondItem="61x-Ki-cZ7" secondAttribute="bottom" constant="116" id="8GD-Qx-8da"/>
-                            <constraint firstItem="61x-Ki-cZ7" firstAttribute="top" secondItem="yy3-Rw-xtP" secondAttribute="top" constant="106" id="ain-hn-eiq"/>
+                            <constraint firstItem="yy3-Rw-xtP" firstAttribute="bottom" secondItem="61x-Ki-cZ7" secondAttribute="bottom" id="8GD-Qx-8da"/>
+                            <constraint firstItem="61x-Ki-cZ7" firstAttribute="top" secondItem="yy3-Rw-xtP" secondAttribute="top" id="ain-hn-eiq"/>
                             <constraint firstItem="61x-Ki-cZ7" firstAttribute="leading" secondItem="yy3-Rw-xtP" secondAttribute="leading" id="iuD-19-VgS"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="yy3-Rw-xtP"/>
